@@ -1,0 +1,86 @@
+---
+import { Image } from "astro:assets";
+import { aboutData } from "@lib/about.data";
+import { MapPin, ArrowUpRight } from "lucide-astro";
+import myImage from "@assets/images/avatar.jpg";
+---
+
+<section id="about" class="section overflow-hidden">
+  <div class="container mx-auto max-w-7xl">
+    
+    <header class="section-header overflow-hidden">
+      <h2 class="section-title about-title">
+        About <span class="italic font-light text-primary">Me</span>
+      </h2>
+    </header>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+      
+      <div class="lg:col-span-4 about-card-wrapper">
+        <div class="relative overflow-hidden border-2 border-base-300">
+          <Image
+            src={myImage}
+            alt={`${aboutData.firstName} ${aboutData.lastName}`}
+            width={600}
+            height={900}
+            class="about-image w-full h-auto object-cover scale-105" 
+          />
+          
+          <div class="absolute bottom-0 left-0 w-full p-6 bg-base-100 border-t border-base-300">
+            <div class="flex justify-between items-center">
+              <div>
+                <p class="text-[10px] font-mono uppercase tracking-widest text-primary font-bold">Location</p>
+                <p class="text-xs font-bold uppercase">{aboutData.location.city}, {aboutData.location.country}</p>
+              </div>
+              <MapPin size={18} class="text-primary" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-8 space-y-12">
+        <div class="space-y-8">
+          <div class="about-badge bg-primary text-primary-content inline-block px-4 py-1 text-[10px] font-mono tracking-[0.3em] uppercase font-bold">
+            EST. 2002
+          </div>
+
+          <h3 class="about-subtitle text-4xl md:text-5xl font-bold uppercase tracking-tighter leading-tight max-w-2xl">
+            Building things on the <span class="text-primary">web</span>
+          </h3>
+
+          <div class="space-y-6 text-lg md:text-xl font-medium leading-relaxed max-w-3xl">
+            {aboutData.bio.split("\n\n").map((paragraph) => (
+              <p class="about-paragraph">{paragraph}</p>
+            ))}
+          </div>
+        </div>
+
+        <div class="pt-12 border-t border-base-300">
+          <p class="text-[10px] uppercase tracking-[0.5em] font-bold opacity-40 mb-8">
+            Connect / Socials
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-px bg-base-300 border border-base-300">
+            {aboutData.social.map((item) => (
+              /* Added .about-social-link class */
+              <a
+                href={item.link}
+                target="_blank"
+                class="about-social-link flex justify-between items-center p-6 bg-base-100 hover:bg-primary transition-colors group"
+              >
+                <span class="text-xs font-black uppercase tracking-widest italic group-hover:text-primary-content">{item.name}</span>
+                <ArrowUpRight size={18} class="social-arrow text-primary group-hover:text-primary-content" />
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { initAbout } from "./about.ts";
+  initAbout();
+  document.addEventListener("astro:page-load", initAbout);
+</script>

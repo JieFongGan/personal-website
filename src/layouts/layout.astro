@@ -1,0 +1,42 @@
+---
+import "@assets/app.css";
+import SEO from "@components/layouts/seo.astro";
+import { aboutData } from "@lib/about.data";
+const currentYear = new Date().getFullYear();
+---
+
+<!doctype html>
+<html lang="en" data-theme="zed-light-sand">
+  <head>
+    <SEO />
+  </head>
+
+  <body class="antialiased flex flex-col min-h-screen">
+    <main class="flex-grow">
+      <slot />
+    </main>
+
+    <footer class="border-t border-primary/10 bg-primary text-primary-content">
+    <div class="max-w-5xl mx-auto px-6 py-10">
+      
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <p class="opacity-80 text-center md:text-left">
+          Wishing you a great day ahead. Thanks for stopping by!
+        </p>
+        
+        <a href="#top" class="text-sm opacity-70 hover:opacity-100 transition-opacity">
+          Back to top ↑
+        </a>
+      </div>
+
+      <hr class="my-8 opacity-10" />
+
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm opacity-60">
+        <p>© {currentYear} {aboutData.firstName} {aboutData.lastName}</p>
+        <span>Built with passion</span>
+      </div>
+      
+    </div>
+  </footer>
+  </body>
+</html>

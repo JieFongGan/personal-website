@@ -1,43 +1,15 @@
-# Astro Starter Kit: Minimal
+# Personal Site
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Welcome to my personal website! Here, you can discover my projects, experience, and passions, all presented in a responsive, modern web experience.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Technologies Used
 
-## 🚀 Project Structure
+This project is built using the following technologies:
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- **Astro**: A fast, content-focused web framework for building dynamic websites
+- **Tailwind CSS**: A utility-first CSS framework for rapid UI development
+- **DaisyUI**: A component library built on top of Tailwind CSS for beautiful, accessible UI components
+- **GSAP**: A powerful JavaScript animation library for creating smooth, professional animations
+- **Lucide Astro**: A collection of beautiful icons optimized for Astro
+- **Simple Icons**: A collection of popular brand icons
+- **Mona Sans**: A modern, industrial variable font by GitHub designed for high-performance and expressive web typography

@@ -1,0 +1,77 @@
+@import "tailwindcss";
+@plugin "daisyui";
+@plugin "daisyui/theme" {
+  name: "zed-light-sand";
+  default: true;
+  prefersdark: false; 
+  color-scheme: "light";
+
+  /* The Canvas: Pure, warm, and bright */
+  --color-base-100: oklch(99% 0.01 85);    /* The "Paper" (Clean Sand) */
+  --color-base-200: oklch(96% 0.015 85);   /* Sidebar/Secondary Background */
+  --color-base-300: oklch(92% 0.02 85);    /* Soft Borders and Dividers */
+  --color-base-content: oklch(18% 0.02 250); /* Deep Navy "Ink" (Maximum Readability) */
+
+  /* Primary Brand: Professional Slate */
+  --color-primary: oklch(40% 0.12 250);      
+  --color-primary-content: oklch(99% 0.01 250);
+
+  /* Secondary Brand: Warm Terracotta Pop */
+  --color-secondary: oklch(60% 0.15 45);
+  --color-secondary-content: oklch(99% 0.01 45);
+
+  /* Accent: Soft Sage Focus */
+  --color-accent: oklch(55% 0.1 160);
+  --color-accent-content: oklch(99% 0.01 160);
+
+  /* System States: Vibrant but balanced */
+  --color-info: oklch(65% 0.12 240);
+  --color-success: oklch(60% 0.15 145);
+  --color-warning: oklch(80% 0.15 85);
+  --color-error: oklch(55% 0.2 25);
+
+  /* The "Zed" Geometry: Sharp and Modern */
+  --radius-selector: 0.2rem; 
+  --radius-field: 0.15rem;
+  --radius-box: 0.3rem;
+  
+  --border: 1px;
+  --depth: 0; 
+}
+
+@font-face {
+  font-family: 'Mona Sans';
+  src: url('/fonts/MonaSansVF.woff2') format('woff2');
+  font-weight: 200 900;
+  font-style: oblique 0deg 12deg;
+  font-display: swap;
+}
+
+body {
+  font-family: 'Mona Sans', system-ui, -apple-system, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6, b, strong {
+  font-weight: 700;
+}
+
+/* Shared Section Styling */
+@layer components {
+  .section {
+    @apply px-4 py-16 lg:px-6 lg:py-32 bg-base-100;
+  }
+
+  .section-hero {
+    @apply relative min-h-screen flex items-center overflow-hidden px-4 sm:px-6 py-20 sm:py-24 lg:py-32 bg-base-100;
+  }
+
+  .section-header {
+    @apply mb-8 lg:mb-24 overflow-hidden;
+  }
+
+  .section-title {
+    @apply text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-black uppercase leading-[0.8] tracking-tighter;
+  }
+}
