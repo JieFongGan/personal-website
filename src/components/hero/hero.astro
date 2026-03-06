@@ -1,0 +1,54 @@
+---
+import { aboutData } from "@lib/about.data";
+---
+
+<section id="hero" class="relative w-full h-screen overflow-hidden flex flex-col justify-center items-center bg-base-100">
+  
+  <div id="glow-cursor" class="absolute w-[40vw] h-[40vw] rounded-full bg-primary/20 blur-[100px] pointer-events-none -translate-x-1/2 -translate-y-1/2 mix-blend-screen z-0"></div>
+
+  <div class="container mx-auto max-w-7xl relative z-10 flex flex-col items-center text-center">
+    
+    <div id="hero-greeting" class="h-6 opacity-0 mb-4"></div>
+
+    <h1 class="flex flex-col leading-[0.85] tracking-tighter uppercase items-center">
+      <span class="hero-name-part text-2xl sm:text-4xl font-light italic opacity-0 mb-2">
+        I am
+      </span>
+      
+      <span class="hero-name-part text-[clamp(4rem,15vw,15rem)] font-black opacity-0">
+        {aboutData.firstName}
+      </span>
+      
+      <span class="hero-name-part text-[clamp(4rem,15vw,15rem)] font-black opacity-0">
+        {aboutData.lastName}
+      </span>
+    </h1>
+
+    <div id="hero-role" class="mt-6 opacity-0">
+      <p class="text-xs sm:text-sm tracking-[0.6em] text-primary uppercase font-bold">
+        {aboutData.title}
+      </p>
+    </div>
+
+    <div id="hero-cta" class="flex flex-wrap justify-center gap-4 mt-12 opacity-0">
+      <a href="#about" class="btn btn-primary btn-md sm:btn-lg px-8 sm:px-12 rounded-none tracking-[0.2em] text-[10px] sm:text-xs border-2">
+        About Me
+      </a>
+      <a href="#career" class="btn btn-outline btn-md sm:btn-lg px-8 sm:px-12 rounded-none tracking-[0.2em] text-[10px] sm:text-xs border-2 hover:bg-base-content hover:text-base-100 border-base-content/10">
+        Career Path
+      </a>
+    </div>
+  </div>
+
+  <div class="absolute bottom-0 left-0 w-full h-12 bg-primary text-primary-content overflow-hidden flex items-center z-20">
+    <div id="marquee-track" class="flex whitespace-nowrap items-center font-mono text-xs sm:text-sm tracking-widest uppercase opacity-0">
+    </div>
+  </div>
+
+</section>
+
+<script>
+  import { initHero } from "./hero.ts";
+  initHero();
+  document.addEventListener("astro:page-load", initHero);
+</script>

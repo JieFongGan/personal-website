@@ -1,0 +1,91 @@
+---
+import { careerData } from "@lib/career.data";
+import { ArrowUpRight } from "lucide-astro";
+
+const formatDate = (date: Date) =>
+  date.toLocaleDateString("en-US", { month: "short", year: "numeric" });
+---
+
+<section id="career" class="section">
+  <div class="container mx-auto max-w-7xl">
+    
+    <header class="section-header overflow-hidden">
+      <h2 class="section-title career-title">
+        Career <span class="italic font-light text-primary">Path</span>
+      </h2>
+    </header>
+
+    <div class="space-y-px bg-base-300 border-y border-base-300">
+      {
+        careerData.map((item, index) => (
+          <article 
+            class="career-item group relative grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 p-10 lg:p-20 bg-base-100 hover:bg-primary/[0.02] transition-colors duration-500"
+            data-index={index}
+          >
+            <div class="md:col-span-2 flex flex-col gap-2 career-element">
+              <span class="font-mono text-xs text-primary font-black tracking-widest">
+                // {(index + 1).toString().padStart(2, '0')}
+              </span>
+              <time class="font-mono text-[10px] font-bold opacity-40 uppercase tracking-widest">
+                {formatDate(item.startDate)} — {item.isCurrent ? "Present" : formatDate(item.endDate!)}
+              </time>
+            </div>
+
+            <div class="md:col-span-5 flex flex-col justify-start career-element">
+              <h3 class="text-4xl sm:text-5xl lg:text-6xl font-black uppercase italic leading-[1] tracking-tighter group-hover:text-primary transition-colors duration-500 pb-3">
+                {item.title}
+              </h3>
+              
+              {item.organizationUrl ? (
+                <a href={item.organizationUrl} target="_blank" class="career-org-link inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest opacity-40 hover:opacity-100 hover:text-primary transition-all">
+                  {item.organization} <ArrowUpRight size={14} class="org-arrow" />
+                </a>
+              ) : (
+                <span class="text-xs font-black uppercase tracking-widest opacity-40">
+                  {item.organization}
+                </span>
+              )}
+            </div>
+
+            <div class="md:col-span-5 space-y-8 career-element">
+              <p class="text-xl lg:text-2xl font-medium leading-relaxed tracking-tight text-base-content/80">
+                {item.description}
+              </p>
+
+              <ul class="flex flex-wrap gap-2">
+                {item.learnedSkills?.map((skill) => (
+                  <li 
+                    class="career-skill flex items-center gap-2 border border-base-300 px-3 py-1.5 hover:border-primary hover:bg-primary/5 transition-colors group/skill"
+                  >
+                    <svg viewBox="0 0 24 24" class="size-3.5 fill-current opacity-30 group-hover/skill:opacity-100 group-hover/skill:text-primary transition-opacity">
+                      <path d={skill.icon} />
+                    </svg>
+                    <span class="text-[10px] font-mono font-bold uppercase tracking-tighter opacity-50 group-hover/skill:opacity-100 group-hover/skill:text-primary">
+                      {skill.name}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {item.isCurrent && (
+              <div class="career-element absolute top-6 right-6 md:top-10 md:right-10 flex items-center gap-2">
+                <span class="text-[10px] font-mono font-bold text-primary uppercase tracking-[0.2em]">Active</span>
+                <span class="relative flex h-1.5 w-1.5">
+                  <span class="animate-ping absolute h-full w-full rounded-full bg-primary opacity-75"></span>
+                  <span class="relative rounded-full h-1.5 w-1.5 bg-primary"></span>
+                </span>
+              </div>
+            )}
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<script>
+  import { initCareer } from "./career.ts";
+  initCareer();
+  document.addEventListener("astro:page-load", initCareer);
+</script>
