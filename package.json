@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.0",
-    "astro": "^6.3.1",
+    "astro": "^6.3.7",
     "daisyui": "^5.5.20",
     "gsap": "^3.15.0",
     "lucide-astro": "^0.556.0",
