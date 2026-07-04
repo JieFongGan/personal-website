@@ -26,7 +26,6 @@ export type CareerType = {
     title: string;
     organization: string;
     organizationUrl?: string;
-    location?: string;
     startDate: Date;
     endDate?: Date;
     isCurrent: boolean;
