@@ -20,10 +20,12 @@ export const aboutData: AboutType = {
     country: "Malaysia",
     countryCode: "MY",
   },
-  summary: "Building things on the web",
-  bio: `My fascination with software began at the intersection of a PC and a PlayStation—wondering how complex systems were built, layered, and brought to life. That curiosity eventually led me through TARUMT and into the world of software development.
+  summary: "Welcome to my internet headquarters",
+  bio: `My fascination with technology began at the intersection of a PC and a PlayStation—wondering how complex systems were built, layered, and brought to life. That curiosity eventually led me through TARUMT and into a career in IT.
 
-I built this site to serve as my personal headquarters. It is a dedicated space to bridge the gap between conceptual ideas and working software. Beyond just a portfolio, it exists to document my technical evolution and to act as a permanent record of the logic, tools, and frameworks I master along the way.`,
+Today, I work on ensuring that technology systems are secure, scalable, and running efficiently. I thrive on diving into the mechanics of how things connect and keeping infrastructure stable.
+
+I built this site to serve as my personal headquarters. Beyond just a portfolio, it exists to document my technical evolution—serving as a permanent record of the logic, tools, and systems I master along the way.`,
   social: [
     {
       name: "GitHub",
