@@ -7,7 +7,7 @@ import {
 export const aboutData: AboutType = {
   firstName: "Gan",
   lastName: "Jie Fong",
-  title: "Web Developer",
+  title: "IT Officer",
   aliases: [
     "Gan Jie Fong",
     "GanJieFong",
