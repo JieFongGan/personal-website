@@ -10,7 +10,6 @@ import {
     siKotlin,
     siSwift,
     siReact,
-    siNodedotjs,
     siNextdotjs,
     siPostgresql,
     siTypescript,
@@ -100,4 +99,14 @@ export const careerData: CareerType[] = [
             { name: "PostgreSQL", icon: siPostgresql.path },
         ],
     },
+    {
+        category: "job",
+        title: "IT Officer",
+        organization: "FOZ One",
+        organizationUrl: "https://fozgroup.com/",
+        location: "Senai, Malaysia",
+        startDate: new Date(2026, 3),
+        isCurrent: true,
+        description: `Provided technical support and maintenance for IT systems within the organization. Collaborated with team members to ensure smooth operation of IT infrastructure and resolved technical issues in a timely manner.`
+    }
 ];
