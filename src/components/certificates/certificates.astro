@@ -1,6 +1,6 @@
 ---
 import { certificatesData } from "@lib/certificates.data";
-import { ExternalLink, Download, ArrowUpRight, X } from "lucide-astro";
+import { ExternalLink, ArrowUpRight, X } from "lucide-astro";
 
 const formatDate = (date: Date) =>
   date.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
@@ -61,16 +61,6 @@ const formatDate = (date: Date) =>
                     <p class="text-xs font-bold uppercase">{formatDate(item.date)}</p>
                   </div>
                 </div>
-
-                {item.skills && item.skills.length > 0 && (
-                  <ul class="cert-element flex flex-wrap gap-2">
-                    {item.skills.map((skill) => (
-                      <li class="cert-skill flex items-center gap-2 border border-base-300 px-3 py-1.5 hover:border-primary hover:bg-primary/5 transition-colors">
-                        <span class="text-[10px] font-mono font-bold uppercase tracking-tighter opacity-50">{skill}</span>
-                      </li>
-                    ))}
-                  </ul>
-                )}
               </div>
 
               <!-- Certificate preview / modal trigger -->
@@ -104,9 +94,6 @@ const formatDate = (date: Date) =>
                   >
                     <ExternalLink size={14} /> View Certificate
                   </button>
-                  <a href={item.file} download class="btn btn-outline rounded-none tracking-[0.2em] text-[10px] sm:text-xs border-2 uppercase hover:bg-base-content hover:text-base-100 border-base-content/10">
-                    <Download size={14} /> Download
-                  </a>
                 </div>
               </div>
 
@@ -139,9 +126,6 @@ const formatDate = (date: Date) =>
                   <div class="shrink-0 flex flex-wrap justify-end gap-3 p-6 border-t border-base-300">
                     <a href={item.file} target="_blank" rel="noopener noreferrer" class="btn btn-primary rounded-none tracking-[0.2em] text-[10px] sm:text-xs border-2 uppercase">
                       <ExternalLink size={14} /> Open in new window
-                    </a>
-                    <a href={item.file} download class="btn btn-outline rounded-none tracking-[0.2em] text-[10px] sm:text-xs border-2 uppercase hover:bg-base-content hover:text-base-100 border-base-content/10">
-                      <Download size={14} /> Download
                     </a>
                     <form method="dialog">
                       <button type="submit" class="btn btn-ghost rounded-none tracking-[0.2em] text-[10px] sm:text-xs uppercase">Close</button>

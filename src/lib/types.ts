@@ -42,7 +42,6 @@ export type CertificateType = {
     location?: string;
     date: Date;
     description?: string;
-    skills?: string[];
     file: string;
     previewImage: string;
 };
