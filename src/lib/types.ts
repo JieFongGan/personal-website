@@ -32,3 +32,16 @@ export type CareerType = {
     description: string;
     learnedSkills?: IconItem[];
 };
+
+export type CertificateType = {
+    title: string;
+    credentialType: string;
+    issuer: string;
+    issuerUrl?: string;
+    academy?: string;
+    location?: string;
+    date: Date;
+    description?: string;
+    file: string;
+    previewImage: string;
+};
